@@ -52,10 +52,8 @@
 ## 基础用法
 
 ```javaScript
-layui.use(['tabs'], function () {
-    const Tabs = layui.tabs;
-    new Tabs();
-})
+const Tabs = layui.tabs;
+new Tabs();
 ```
 
 ## 添加事件监听

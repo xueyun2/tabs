@@ -1,0 +1,107 @@
+/* 移动端选项卡 */
+.mobile-tabs {
+    position: relative;
+    box-sizing: border-box;
+    --primary-color: #407BFF;
+    --white-color: #fff;
+
+}
+
+.mobile-tabs .tabs-box {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-tabs .tabs-list {
+    display: flex;
+    overflow-y: scroll;
+    position: relative;
+    scrollbar-width: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.mobile-tabs .tabs-list-parent {
+    flex: 1;
+    position: relative;
+    min-width: 0;
+}
+
+.mobile-tabs .tabs-list .active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.mobile-tabs .tabs-item {
+    font-size: 4vw;
+    padding: 2.6667vw 2.6667vw;
+    white-space: nowrap;
+}
+
+/* 底部横线 */
+.mobile-tabs .tabs-line {
+    display: block;
+    width: 7.4667vw;
+    height: 1.0667vw;
+
+    background: var(--primary-color);
+    transition: transform 0.3s ease;
+    position: absolute;
+    bottom: 0;
+}
+
+/* 显示右侧更多图标 */
+.mobile-tabs.show-more .tabs-list {
+    padding-right: 6.4vw;
+}
+
+.mobile-tabs .tabs-more {
+    background: var(--white-color);
+}
+
+.mobile-tabs .tabs-left-mask,
+.mobile-tabs .tabs-right-mask {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+}
+
+.mobile-tabs .tabs-right-mask {
+    right: 0;
+    background: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.mobile-tabs .tabs-left-mask {
+    left: 0;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+/* .mobile-tabs .tabs-more-icon {
+    display: block;
+    width: 6.4vw;
+    height: 6.4vw;
+    background: url('./icon/caidan.png') no-repeat left top/6.4vw 6.4vw;
+} */
+
+.mobile-tabs .tabs-head {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-tabs .tabs-content>div {
+    display: none;
+}
+
+.mobile-tabs .tabs-content>div.tabs-show {
+    display: block;
+}
+
+.mobile-tabs .tabs-list .tabs-item-disabled {
+    color: #999;
+    pointer-events: none;
+    cursor: not-allowed;
+}

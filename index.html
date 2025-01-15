@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/tabs.css">
+    <style>
+        body,
+        html {
+            margin: 0;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mobile-tabs" id="tabs">
+        <div class="tabs-head">
+            <ul class="tabs-list">
+                <li class="tabs-item active" data-id="111">
+                    推荐
+                </li>
+                <li class="tabs-item" data-id="111">
+                    年货节
+                </li>
+                <li class="tabs-item" data-id="111">
+                    排行榜
+                </li>
+                <li class="tabs-item" data-id="111">
+                    国家补贴
+                </li>
+                <li class="tabs-item" data-id="111">
+                    数码
+                </li>
+                <li class="tabs-item" data-id="111">
+                    电脑办公
+                </li>
+                <li class="tabs-item" data-id="111">
+                    家具
+                </li>
+                <li class="tabs-item" data-id="111">
+                    电器
+                </li>
+            </ul>
+        </div>
+        <div class="tabs-content">
+            <div class="tabs-show">内容1</div>
+            <div>内容2</div>
+            <div>内容3</div>
+            <div>内容4</div>
+            <div>内容5</div>
+            <div>内容6</div>
+            <div>内容7</div>
+            <div>内容8</div>
+        </div>
+    </div>
+    <script src="tabs.js"></script>
+    <script>
+        const tabs = new Tabs();
+        //添加事件监听
+        tabs.on('#tabs', (elem) => {
+            console.log(elem);
+            console.log('下标：', elem.index);
+            console.log('当前元素：', elem.item);
+            console.log('当前元素父元素：', elem.parentElement);
+            console.log('数据：', elem.data)
+            console.log(elem.data.id, elem.data.name);
+        });
+        //设置指定下标
+        tabs.setPositionByIndex('#tabs', 2);
+    </script>
+</body>
+
+</html>
